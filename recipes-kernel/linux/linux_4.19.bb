@@ -18,7 +18,7 @@ PV .= ""
 RDEPENDS_kernel-base += "kernel-devicetree"
 
 SRCREV = "79bf89b88a87f2ebf147f76d8c40183283b49b51"
-SRC_URI = "git://g;protocol=git;branch=orange-pi-4.19 \
+SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.19 \
 	file://defconfig \
   file://0001-add-usb2-usb3-to-nanopi-neo-air.patch \
   file://0002-enable-emmc-and-ap6212-bluetooth-uart3.patch \
