@@ -1,0 +1,60 @@
+From 61aff9517a1248541f8c4d8dad41e5c911b00b4b Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Sun, 17 Jun 2018 15:23:50 +0800
+Subject: [PATCH 13/13] enable usb 0 1 on nanopi neo core
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts | 22 ++++++++++++++++---
+ 1 file changed, 19 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index e84017da1bdd..f0aef8f61ed1 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -257,24 +257,40 @@
+         status = "okay";
+ };
+ 
+-&ehci3 {
++&ehci0 {
+ 	status = "okay";
+ };
+ 
++&ehci1 {
++        status = "okay";
++};
++
+ &ehci2 {
+ 	status = "okay";
+ };
+ 
+-&ohci3 {
++&ehci3 {
++        status = "okay";
++};
++
++&ohci0 {
+ 	status = "okay";
+ };
+ 
++&ohci1 {
++        status = "okay";
++};
++
+ &ohci2 {
+ 	status = "okay";
+ };
+ 
++&ohci3 {
++        status = "okay";
++};
++
+ &usb_otg {
+-	dr_mode = "otg";
++	dr_mode = "host";
+ 	status = "okay";
+ };
+ 
+-- 
+2.17.1
+

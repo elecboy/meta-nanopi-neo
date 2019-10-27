@@ -1,0 +1,63 @@
+From ac062f4558ddefea3260b8e61565884c1e5f8251 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Fri, 15 Jun 2018 11:17:33 +0800
+Subject: [PATCH 01/13] add usb2 usb3 to nanopi neo air
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts | 16 ++++++++++++++++
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts     | 18 ++++++++++++++++++
+ 2 files changed, 34 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index 6246d3eff39d..edf836222217 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -113,3 +113,19 @@
+ 	/* USB VBUS is always on */
+ 	status = "okay";
+ };
++
++&ehci3 {
++	status = "okay";
++};
++
++&ehci2 {
++	status = "okay";
++};
++
++&ohci3 {
++	status = "okay";
++};
++
++&ohci2 {
++	status = "okay";
++};
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts
+index 9f33f6fae595..b14ebe8abaea 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts
+@@ -70,3 +70,21 @@
+ &usbphy {
+ 	usb0_id_det-gpios = <&pio 6 12 GPIO_ACTIVE_HIGH>; /* PG12 */
+ };
++
++
++&ehci1 {
++       status = "okay";
++};
++
++&ehci2 {
++       status = "okay";
++};
++
++&ohci1 {
++       status = "okay";
++};
++
++&ohci2 {
++       status = "okay";
++};
++
+-- 
+2.17.1
+

@@ -1,0 +1,26 @@
+From da04ed8ef170bf857e84518fdf3d7763d80e0090 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Sun, 17 Jun 2018 15:20:35 +0800
+Subject: [PATCH 10/13] enable nanopi neo air emac
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index 2fb93ceee9ea..ba654000ac08 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -258,3 +258,9 @@
+ &ohci2 {
+ 	status = "okay";
+ };
++&emac {
++        phy-handle = <&int_mii_phy>;
++        phy-mode = "mii";
++        allwinner,leds-active-low;
++        status = "okay";
++};
+-- 
+2.17.1
+

@@ -1,0 +1,37 @@
+From 3df3e8c1a04b7706a94d0acd03b9f8fee85cfd64 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Sun, 17 Jun 2018 10:30:55 +0800
+Subject: [PATCH 05/13] add ds3231 rtc to nano pi neo air
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index a1cdcf2baa45..e62eb5a4fbb1 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -54,6 +54,7 @@
+ 
+ 	aliases {
+ 		serial0 = &uart0;
++		rtc2 = &ds3231;
+ 	};
+ 
+ 	chosen {
+@@ -216,6 +217,12 @@
+ 
+ &i2c0 {
+       status = "okay";
++       ds3231: rtc@68 {
++               compatible = "maxim,ds3231";
++               reg = <0x68>;
++               status = "ok";
++               wakeup-source;
++      };
+ };
+ 
+ &usbphy {
+-- 
+2.17.1
+

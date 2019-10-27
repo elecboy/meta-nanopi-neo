@@ -1,0 +1,50 @@
+From 9a473e0f4370207678a5864d7a6706470fc0994a Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Sun, 17 Jun 2018 10:15:14 +0800
+Subject: [PATCH 02/13] enable emmc and ap6212 bluetooth uart3
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts | 20 +++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index edf836222217..ffaebd716655 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -77,6 +77,10 @@
+ 		compatible = "mmc-pwrseq-simple";
+ 		reset-gpios = <&r_pio 0 7 GPIO_ACTIVE_LOW>; /* PL7 */
+ 	};
++
++	aliases {
++		serial3 = &uart3;
++		};
+ };
+ 
+ &mmc0 {
+@@ -103,6 +107,22 @@
+ 	};
+ };
+ 
++&mmc2 {
++       pinctrl-names = "default";
++       pinctrl-0 = <&mmc2_8bit_pins>;
++       vmmc-supply = <&reg_vcc3v3>;
++       vqmmc-supply = <&reg_vcc3v3>;
++       bus-width = <8>;
++       non-removable;
++       status = "okay";
++};
++
++&uart3 { /* Connected to AP6212 on Neo Air */
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart3_pins>;
++	status = "okay";
++};
++
+ &uart0 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&uart0_pins_a>;
+-- 
+2.17.1
+
