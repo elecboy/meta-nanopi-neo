@@ -1,0 +1,27 @@
+From 6c3ce4dd5025439822e8515c9bc30493d7586614 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Sun, 17 Jun 2018 10:22:29 +0800
+Subject: [PATCH 03/13] enable neo-air-i2c0
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index ffaebd716655..84724fec6469 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -129,6 +129,10 @@
+ 	status = "okay";
+ };
+ 
++&i2c0 {
++      status = "okay";
++};
++
+ &usbphy {
+ 	/* USB VBUS is always on */
+ 	status = "okay";
+-- 
+2.17.1
+

@@ -1,0 +1,48 @@
+From 6545145e7e9d08b700cc538a24121caeed841b48 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Sun, 17 Jun 2018 15:23:23 +0800
+Subject: [PATCH 12/13] enable nanopi neo air usb otg
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index fd6cd1894aab..e84017da1bdd 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -245,9 +245,16 @@
+         status = "okay";
+ };
+ 
++&reg_usb0_vbus {
++        gpio = <&r_pio 0 2 GPIO_ACTIVE_HIGH>; /* PL2 */
++        status = "okay";
++};
++
+ &usbphy {
+-	/* USB VBUS is always on */
+-	status = "okay";
++        /* USB Type-A port's VBUS is always on */
++        usb0_id_det-gpios = <&pio 6 12 GPIO_ACTIVE_HIGH>; /* PG12 */
++        usb0_vbus-supply = <&reg_usb0_vbus>;
++        status = "okay";
+ };
+ 
+ &ehci3 {
+@@ -265,6 +272,12 @@
+ &ohci2 {
+ 	status = "okay";
+ };
++
++&usb_otg {
++	dr_mode = "otg";
++	status = "okay";
++};
++
+ &emac {
+         phy-handle = <&int_mii_phy>;
+         phy-mode = "mii";
+-- 
+2.17.1
+
