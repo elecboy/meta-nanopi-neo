@@ -4,7 +4,7 @@ Date: Tue, 19 Jun 2018 09:58:34 +0800
 Subject: [PATCH 04/13] add cpufreq to neo air
 
 ---
- arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts | 85 +++++++++++++++++++
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts | 45 +++++++++++++++++++
  1 file changed, 85 insertions(+)
 
 diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
@@ -20,7 +20,7 @@ index 84724fec6469..9ffd8bc95ac8 100644
 
  / {
  	model = "FriendlyARM NanoPi NEO Air";
-@@ -81,6 +83,89 @@
+@@ -81,6 +83,49 @@
  	aliases {
  		serial3 = &uart3;
  		};
