@@ -1,0 +1,1 @@
+SUBSYSTEM=="net",  ACTION=="add", KERNEL=="wlan*", DRIVERS=="brcmfmac", RUN+="/usr/sbin/iw wlan0 set power_save off", NAME="wlan0"

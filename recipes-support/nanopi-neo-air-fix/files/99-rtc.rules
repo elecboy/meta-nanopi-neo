@@ -1,0 +1,3 @@
+SUBSYSTEM=="rtc", DRIVERS=="rtc-rx8010", SYMLINK="rtc", RUN+="/sbin/hwclock -s", OPTIONS+="link_priority=80"
+SUBSYSTEM=="rtc", DRIVERS=="rtc-ds1307", SYMLINK="rtc", RUN+="/sbin/hwclock -s", OPTIONS+="link_priority=90"
+SUBSYSTEM=="rtc", DRIVERS=="rtc-pcf8563", SYMLINK="rtc", RUN+="/sbin/hwclock -s", OPTIONS+="link_priority=100"

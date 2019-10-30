@@ -1,0 +1,16 @@
+[Unit]
+Description=mtsports nanopi-neo-air board func fix
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=/usr/bin/cpufreq-set -d 480MHz -u 912MHz -g ondemand
+ExecStart=/bin/bash -c '/bin/echo 25 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold'
+ExecStart=/bin/bash -c '/bin/echo 10 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor'
+ExecStart=/bin/bash -c '/bin/echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy'
+
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
