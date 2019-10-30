@@ -21,6 +21,8 @@ SYSTEMD_AUTO_ENABLE_${PN} = "enable"
 do_install() {
     install -m 0644 -D ${WORKDIR}/nanopi-neo-air-cpufreq.service ${D}${systemd_unitdir}/system/nanopi-neo-air-cpufreq.service
     sed -i -e 's,@SBINDIR@,${sbindir},g' -e 's,@SYSCONFDIR@,${sysconfdir},g' ${D}${systemd_unitdir}/system/nanopi-neo-air-cpufreq.service
+    mkdir -p ${D}${sysconfdir}/systemd/system/multi-user.target.wants
+    ln -sf /lib/systemd/system/nanopi-neo-air-cpufreq.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/nanopi-neo-air-cpufreq.service
 }
 
 SYSTEMD_SERVICE_${PN} = "nanopi-neo-air-cpufreq.service"
