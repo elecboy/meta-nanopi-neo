@@ -1,0 +1,24 @@
+From 0b909db6408a4d4db9d40d0e821c9af5fd766893 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Fri, 15 Nov 2019 09:07:35 +0800
+Subject: [PATCH 4/5] enable i2c0
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts
+index 472659b6b..a3c6953db 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts
+@@ -96,3 +96,7 @@
+ &ohci2 {
+        status = "okay";
+ };
++
++&i2c0 {
++      status = "okay";
++};
+-- 
+2.24.0
+

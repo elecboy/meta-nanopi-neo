@@ -1,7 +1,7 @@
 From 4c897ace57ae81c03e79752363f7b5c4e8c47420 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Thu, 14 Nov 2019 17:00:26 +0800
-Subject: [PATCH 2/2] enable mmc2
+Subject: [PATCH 2/5] enable mmc2
 
 ---
  arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts | 10 ++++++++++

@@ -1,0 +1,27 @@
+From e697e86df2636660a2d3a468dfecbb9cb9fb3018 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Fri, 15 Nov 2019 09:11:56 +0800
+Subject: [PATCH 5/5] add pcf8563
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts
+index a3c6953db..3558de3e3 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts
+@@ -99,4 +99,10 @@
+ 
+ &i2c0 {
+       status = "okay";
++      pcf8563: rtc@51 {
++               compatible = "nxp,pcf8563";
++               reg = <0x51>;
++               status = "ok";
++               wakeup-source;
++      };
+ };
+-- 
+2.24.0
+
