@@ -1,0 +1,30 @@
+From 471001880f72b0a8b522396f917ef0e145c1ad02 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Tue, 19 Nov 2019 09:52:37 +0800
+Subject: [PATCH 2/3] enable emmc on nanopi-neo-core
+
+---
+ arch/arm/dts/sun8i-h3-nanopi-neo-core.dts | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/arch/arm/dts/sun8i-h3-nanopi-neo-core.dts b/arch/arm/dts/sun8i-h3-nanopi-neo-core.dts
+index 0cbf9f516d..723dded1f9 100644
+--- a/arch/arm/dts/sun8i-h3-nanopi-neo-core.dts
++++ b/arch/arm/dts/sun8i-h3-nanopi-neo-core.dts
+@@ -70,3 +70,13 @@
+ &usbphy {
+ 	usb0_id_det-gpios = <&pio 6 12 GPIO_ACTIVE_HIGH>; /* PG12 */
+ };
++
++&mmc2 {
++       pinctrl-names = "default";
++       pinctrl-0 = <&mmc2_8bit_pins>;
++       vmmc-supply = <&reg_vcc3v3>;
++       vqmmc-supply = <&reg_vcc3v3>;
++       bus-width = <8>;
++       non-removable;
++       status = "okay";
++};
+-- 
+2.24.0
+
