@@ -1,0 +1,21 @@
+From bb56a72cbead78e4c22160711b35925dcadc76ab Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Wed, 20 Nov 2019 08:57:20 +0800
+Subject: [PATCH 4/4] nanopi_neo_core_defconfig:enable emmc support
+
+---
+ configs/nanopi_neo_core_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/configs/nanopi_neo_core_defconfig b/configs/nanopi_neo_core_defconfig
+index e1c287a310..6b1b84f5b8 100644
+--- a/configs/nanopi_neo_core_defconfig
++++ b/configs/nanopi_neo_core_defconfig
+@@ -16,3 +16,4 @@ CONFIG_DEFAULT_DEVICE_TREE="sun8i-h3-nanopi-neo-core"
+ CONFIG_SUN8I_EMAC=y
+ CONFIG_USB_EHCI_HCD=y
+ CONFIG_SYS_USB_EVENT_POLL_VIA_INT_QUEUE=y
++CONFIG_MMC_SUNXI_SLOT_EXTRA=2
+-- 
+2.24.0
+
