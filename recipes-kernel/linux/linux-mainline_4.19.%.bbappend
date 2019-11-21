@@ -7,4 +7,5 @@ SRC_URI += "\
     file://0004-enable-i2c0.patch \
     file://0005-add-pcf8563.patch \
     file://0006-add-cpu-supply-for-nanopi.patch \
+    file://0007-add-912MHz-for-h3.patch \
 "
