@@ -6,4 +6,5 @@ SRC_URI += "\
     file://0003-enable-usb1-usb2.patch \
     file://0004-enable-i2c0.patch \
     file://0005-add-pcf8563.patch \
+    file://0006-add-cpu-supply-for-nanopi.patch \
 "
