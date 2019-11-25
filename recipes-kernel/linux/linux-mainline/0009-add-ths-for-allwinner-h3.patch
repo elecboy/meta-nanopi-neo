@@ -1,0 +1,46 @@
+From 002872c0f0850394f77cea135867ed98d2d43cc2 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Mon, 25 Nov 2019 15:32:00 +0800
+Subject: [PATCH 9/9] add ths for allwinner h3
+
+---
+ arch/arm/boot/dts/sun8i-h3.dtsi | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
+index 78231157c..2e7c53c8e 100644
+--- a/arch/arm/boot/dts/sun8i-h3.dtsi
++++ b/arch/arm/boot/dts/sun8i-h3.dtsi
+@@ -172,6 +172,29 @@
+ 			assigned-clocks = <&ccu CLK_GPU>;
+ 			assigned-clock-rates = <384000000>;
+ 		};
++
++		ths: ths@1c25000 {
++			compatible = "allwinner,sun8i-h3-ths";
++			reg = <0x01c25000 0x400>;
++			clocks = <&ccu CLK_BUS_THS>, <&ccu CLK_THS>;
++			clock-names = "bus", "mod";
++			resets = <&ccu RST_BUS_THS>;
++			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
++			nvmem-cells = <&tsen_calib>;
++			nvmem-cell-names = "calib";
++			#thermal-sensor-cells = <0>;
++		};
++
++		sid: sid@1c14000 {
++			compatible = "allwinner,sun8i-h3-sid";
++			reg = <0x1c14000 0x400>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++			tsen_calib: calib@34 {
++			reg = <0x34 2>;
++			};
++		};
++
+ 	};
+ };
+ 
+-- 
+2.24.0
+
