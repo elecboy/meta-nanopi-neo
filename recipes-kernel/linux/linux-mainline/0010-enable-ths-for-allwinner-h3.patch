@@ -1,14 +1,14 @@
-From 3ce9b04e7b9121555fe96537457380f26dcfd501 Mon Sep 17 00:00:00 2001
+From a6dd55b6952b7455685f76082411e8584edfd920 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
-Date: Mon, 25 Nov 2019 16:20:41 +0800
+Date: Mon, 25 Nov 2019 16:45:08 +0800
 Subject: [PATCH 10/10] enable ths for allwinner h3
 
 ---
- arch/arm/boot/dts/sun8i-h3.dtsi | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm/boot/dts/sun8i-h3.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
-index 2e7c53c8e..9683f3a7a 100644
+index 2e7c53c8e..1d7f83270 100644
 --- a/arch/arm/boot/dts/sun8i-h3.dtsi
 +++ b/arch/arm/boot/dts/sun8i-h3.dtsi
 @@ -183,6 +183,7 @@
@@ -19,14 +19,6 @@ index 2e7c53c8e..9683f3a7a 100644
  		};
  
  		sid: sid@1c14000 {
-@@ -193,6 +194,7 @@
- 			tsen_calib: calib@34 {
- 			reg = <0x34 2>;
- 			};
-+			status = "ok";			
- 		};
- 
- 	};
 -- 
 2.24.0
 
