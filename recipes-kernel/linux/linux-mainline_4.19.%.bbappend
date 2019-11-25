@@ -8,4 +8,5 @@ SRC_URI += "\
     file://0005-add-pcf8563.patch \
     file://0006-add-cpu-supply-for-nanopi.patch \
     file://0007-add-912MHz-for-h3.patch \
+    file://0008-add-thermal-for-allwinner-h3-h5-h6.patch \
 "
