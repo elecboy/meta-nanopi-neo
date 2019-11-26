@@ -23,7 +23,6 @@ SRC_URI[md5sum] = "14dbbe3ae9ae1b470aac1e1408d4ea21"
 SRC_URI[sha256sum] = "bf2cbba319d43d1bd9e876ac0b55ab83118d1a1e61cce3c929d5371f7567bff6"
 
 SRC_URI = "https://www.kernel.org/pub/linux/kernel/v4.x/linux-${PV}.tar.xz \
-        file://0003-ARM-dts-nanopi-neo-air-Add-WiFi-eMMC.patch \
         file://defconfig \
         "
 
