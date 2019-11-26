@@ -1,5 +1,5 @@
 FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
-SRC_URI += "\
+SRC_URI_append_nanopi-neo-core += "\
     file://defconfig \
     file://0001-nanopi-neo-nanopi-neo-core.patch \
     file://0002-enable-mmc2.patch \
