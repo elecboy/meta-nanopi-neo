@@ -9,7 +9,7 @@ RemainAfterExit=yes
 ExecStartPre=/usr/bin/cpufreq-set -d 912MHz -u 912MHz -g performance
 #ExecStart=/bin/bash -c '/bin/echo 90 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold'
 #ExecStart=/bin/bash -c '/bin/echo 2 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor'
-#ExecStart=/bin/bash -c '/bin/echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy'
+ExecStart=/bin/bash -c '/bin/echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy'
 
 Restart=no
 
