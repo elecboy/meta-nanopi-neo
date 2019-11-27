@@ -11,4 +11,5 @@ SRC_URI_append_nanopi-neo-core += "\
     file://0008-add-thermal-for-allwinner-h3-h5-h6.patch \
     file://0009-add-ths-for-allwinner-h3.patch \
     file://0010-enable-ths-for-allwinner-h3.patch \
+    file://0011-enable-uart1-for-nanopi-neo-core.patch \
 "
