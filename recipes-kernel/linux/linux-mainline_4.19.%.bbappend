@@ -10,7 +10,6 @@ SRC_URI_append_nanopi-neo-core += "\
     file://0007-add-912MHz-for-h3.patch \
     file://0009-dt-bindings-update-the-Allwinner-GPADC-device-tree-b.patch \
     file://0011-iio-adc-sun4i-gpadc-iio-rename-A33-specified-registe.patch \
-    file://0012-general-h6-new-opp-table.patch \
     file://0012-iio-adc-sun4i-gpadc-iio-rework-sampling-start-end-co.patch \
     file://0013-iio-adc-sun4i-gpadc-iio-rework-support-clocks-and-re.patch \
     file://0014-iio-adc-sun4i-gpadc-iio-rework-support-multible-sens.patch \
