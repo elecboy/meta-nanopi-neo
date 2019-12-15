@@ -1,28 +1,29 @@
-From 00a1da0c97cd2934e8cff6267ec378a6abe9479c Mon Sep 17 00:00:00 2001
+From 7677ce1666cfb04f1b3bfe3cc60dc8215424264c Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
-Date: Fri, 22 Nov 2019 00:47:50 +0800
-Subject: [PATCH 7/7] add 912MHz for h3
+Date: Sun, 15 Dec 2019 08:27:09 +0800
+Subject: [PATCH] add 912MHz for h3
 
 ---
  arch/arm/boot/dts/sun8i-h3.dtsi | 6 ++++++
  1 file changed, 6 insertions(+)
 
 diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
-index f0096074a..78231157c 100644
+index 9233ba30a..4f665b781 100644
 --- a/arch/arm/boot/dts/sun8i-h3.dtsi
 +++ b/arch/arm/boot/dts/sun8i-h3.dtsi
 @@ -59,6 +59,12 @@
  			clock-latency-ns = <244144>; /* 8 32k periods */
  		};
-
+ 
 +                opp-912000000 {
 +                        opp-hz = /bits/ 64 <912000000>;
 +                        opp-microvolt = <1100000 1100000 1300000>;
 +                        clock-latency-ns = <244144>; /* 8 32k periods */
 +                };
 +
-		opp-1008000000 {
+ 		opp-1008000000 {
  			opp-hz = /bits/ 64 <1008000000>;
  			opp-microvolt = <1200000 1200000 1300000>;
----
-2.24.0
+-- 
+2.24.1
+
