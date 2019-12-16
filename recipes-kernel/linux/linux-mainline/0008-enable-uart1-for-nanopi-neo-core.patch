@@ -1,0 +1,26 @@
+From 774c393637760ddd8540149d45382d95a8ad0c87 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Wed, 27 Nov 2019 13:29:19 +0800
+Subject: [PATCH 11/11] enable uart1 for nanopi-neo-core
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts
+index 9f33f6fae..466bfca0e 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts
+@@ -70,3 +70,9 @@
+ &usbphy {
+ 	usb0_id_det-gpios = <&pio 6 12 GPIO_ACTIVE_HIGH>; /* PG12 */
+ };
++
++&uart1 {
++        pinctrl-names = "default";
++        pinctrl-0 = <&uart1_pins>;
++        status = "okay";
++};
+-- 
+2.24.0
+
