@@ -8,7 +8,7 @@ SRC_URI_append_nanopi-neo-core += "\
     file://0005-add-pcf8563.patch \
     file://0006-add-cpu-supply-for-nanopi.patch \
     file://0007-add-912MHz-for-h3.patch \
-    file://0008-enable-uart1-for-nanopi-neo-core.patch \
+    file://0008-enable-uart1-and-uart2-for-nanopi-neo-core.patch \
     file://0009-add-ths-for-allwinner-h3.patch \
     file://0009-dt-bindings-update-the-Allwinner-GPADC-device-tree-b.patch \
     file://0011-iio-adc-sun4i-gpadc-iio-rename-A33-specified-registe.patch \
