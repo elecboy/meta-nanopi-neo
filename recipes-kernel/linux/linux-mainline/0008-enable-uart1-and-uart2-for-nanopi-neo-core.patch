@@ -19,7 +19,7 @@ index 3558de3e3..c18035207 100644
 +
 +&uart1 {
 +        pinctrl-names = "default";
-+        pinctrl-0 = <&uart1_pins>;
++        pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
 +        status = "okay";
 +};
 +
