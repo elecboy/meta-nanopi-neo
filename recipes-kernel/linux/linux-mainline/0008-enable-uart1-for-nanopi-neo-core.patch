@@ -16,11 +16,10 @@ index 3558de3e3..f8081dbc6 100644
        };
  };
 +
-+uart1 {
++&uart1 {
 +        pinctrl-names = "default";
 +        pinctrl-0 = <&uart1_pins>;
 +        status = "okay";
 +};
--- 
+--
 2.24.1
-
