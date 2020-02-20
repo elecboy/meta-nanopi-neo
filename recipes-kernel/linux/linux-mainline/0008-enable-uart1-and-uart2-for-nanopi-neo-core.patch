@@ -1,0 +1,48 @@
+From 51ad8da883b615276e1ae6362f59557523e6c25a Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Mon, 16 Dec 2019 23:57:03 +0800
+Subject: [PATCH] enable uart1 and uart2 for nanopi neo core
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts | 12 ++++++++++++
+ arch/arm/boot/dts/sunxi-h3-h5.dtsi             |  5 +++++
+ 2 files changed, 17 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts
+index 3558de3e3..c18035207 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-core.dts
+@@ -106,3 +106,15 @@
+                wakeup-source;
+       };
+ };
++
++&uart1 {
++        pinctrl-names = "default";
++        pinctrl-0 = <&uart1_pins>;
++        status = "okay";
++};
++
++&uart2 {
++        pinctrl-names = "default";
++        pinctrl-0 = <&uart2_pins>, <&uart2_rts_cts_pins>;
++        status = "okay";
++};
+diff --git a/arch/arm/boot/dts/sunxi-h3-h5.dtsi b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
+index 4b1530ebe..147018227 100644
+--- a/arch/arm/boot/dts/sunxi-h3-h5.dtsi
++++ b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
+@@ -477,6 +477,11 @@
+ 				function = "uart2";
+ 			};
+
++                        uart2_rts_cts_pins: uart2_rts_cts {
++                                pins = "PA2", "PA3";
++                                function = "uart2";
++                        };
++
+ 			uart3_pins: uart3 {
+ 				pins = "PA13", "PA14";
+ 				function = "uart3";
+--
+2.24.1

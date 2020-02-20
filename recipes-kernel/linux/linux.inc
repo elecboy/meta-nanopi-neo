@@ -1,11 +1,10 @@
 DESCRIPTION = "Linux Kernel"
 SECTION = "kernel"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 INC_PR = "r0"
 
-inherit kernel siteinfo
+inherit kernel kernel-yocto siteinfo
 
 # Enable OABI compat for people stuck with obsolete userspace
 ARM_KEEP_OABI ?= "0"
@@ -16,12 +15,14 @@ CMDLINE_DEBUG ?= "loglevel=3"
 
 # Kernel bootlogo is distro-specific (default is OE logo).
 # Logo resolution (qvga, vga, ...) is machine-specific.
-LOGO_SIZE ?= '${@base_conditional("MACHINE_GUI_CLASS", "bigscreen", "vga", "qvga", d)}'
+LOGO_SIZE ?= '${@oe.utils.conditional("MACHINE_GUI_CLASS", "bigscreen", "vga", "qvga", d)}'
 # To use this, add file://${LOGO_SIZE}/logo_linux_clut224.ppm.bz2 or similar
 # to your kernel recipe, and then structure your logos for each resolution
 # accordingly.
 
 LOCALVERSION ?= ""
+KCONFIG_MODE ?= "alldefconfig"
+KMACHINE ?= "${MACHINE}"
 
 #kernel_conf_variable CMDLINE "\"${CMDLINE} ${CMDLINE_DEBUG}\""
 kernel_conf_variable() {
@@ -34,8 +35,11 @@ kernel_conf_variable() {
     fi
 }
 
+do_kernel_configme[depends] += "virtual/${TARGET_PREFIX}binutils:do_populate_sysroot"
+do_kernel_configme[depends] += "virtual/${TARGET_PREFIX}gcc:do_populate_sysroot"
+do_kernel_configme[depends] += "bc-native:do_populate_sysroot bison-native:do_populate_sysroot"
+
 do_configure_prepend() {
-    echo "" > ${B}/.config
     CONF_SED_SCRIPT=""
 
     #
@@ -110,9 +114,6 @@ do_configure_prepend() {
         kernel_conf_variable ROOT_NFS y
         kernel_conf_variable CMDLINE \"${CMDLINE_NFSROOT_USB} ${CMDLINE_DEBUG}\"
     fi
-
-    sed -e "${CONF_SED_SCRIPT}" \
-    < '${WORKDIR}/defconfig' >>'${B}/.config'
 
     yes '' | oe_runmake -C ${S} O=${B} oldconfig
 }

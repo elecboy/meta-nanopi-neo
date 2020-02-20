@@ -1,0 +1,44 @@
+From 41cf490917f4605c82b35db9568868e635bc4f83 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Thu, 21 Nov 2019 13:09:16 +0800
+Subject: [PATCH 6/6] add cpu-supply for nanopi
+
+---
+ arch/arm/boot/dts/sun8i-h3-nanopi.dtsi | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi.dtsi b/arch/arm/boot/dts/sun8i-h3-nanopi.dtsi
+index f110ee382..3111e516f 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi.dtsi
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi.dtsi
+@@ -87,6 +87,27 @@
+ 			gpios = <&r_pio 0 3 GPIO_ACTIVE_LOW>;
+ 		};
+ 	};
++
++        reg_vdd_cpux: vdd-cpux-regulator {
++                compatible = "regulator-gpio";
++                regulator-name = "vdd-cpux";
++                regulator-type = "voltage";
++                regulator-boot-on;
++                regulator-always-on;
++                regulator-min-microvolt = <1100000>;
++                regulator-max-microvolt = <1300000>;
++                regulator-ramp-delay = <50>; /* 4ms */
++
++                gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
++                enable-active-high;
++                gpios-states = <0x1>;
++                states = <1100000 0x0
++                          1300000 0x1>;
++        };
++};
++
++&cpu0 {
++        cpu-supply = <&reg_vdd_cpux>;
+ };
+ 
+ &ehci3 {
+-- 
+2.24.0
+

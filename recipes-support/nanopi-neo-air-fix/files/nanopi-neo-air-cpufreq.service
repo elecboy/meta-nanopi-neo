@@ -5,10 +5,11 @@ After=network.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStartPre=/usr/bin/cpufreq-set -d 648MHz -u 1.01GHz -g ondemand
-ExecStart=/bin/bash -c '/bin/echo 25 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold'
-ExecStart=/bin/bash -c '/bin/echo 10 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor'
-ExecStart=/bin/bash -c '/bin/echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy'
+#ExecStartPre=/usr/bin/cpufreq-set -d 648MHz -u 912MHz -g ondemand
+ExecStart=/usr/bin/cpufreq-set -d 912MHz -u 912MHz -g performance
+#ExecStart=/bin/bash -c '/bin/echo 90 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold'
+#ExecStart=/bin/bash -c '/bin/echo 2 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor'
+#ExecStart=/bin/bash -c '/bin/echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy'
 
 Restart=no
 
