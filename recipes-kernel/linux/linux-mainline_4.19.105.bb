@@ -19,8 +19,8 @@ KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
 S = "${WORKDIR}/linux-${PV}"
 
-SRC_URI[md5sum] = "cb776277cb79a48b7ee34fdfcaa31ec1"
-SRC_URI[sha256sum] = "23ebffb28c2607682fcb91df90d77467ac5b16a50961de298ef266a919d66be8"
+SRC_URI[md5sum] = "960073de540e54312c81750f74231983"
+SRC_URI[sha256sum] = "f82c778ab404feb3dce6c08bff089fe2e1d86b62fc40cf2950112ea7aa22bf12"
 
 SRC_URI = "https://www.kernel.org/pub/linux/kernel/v4.x/linux-${PV}.tar.xz \
         file://defconfig \
