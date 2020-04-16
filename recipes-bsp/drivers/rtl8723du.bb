@@ -6,6 +6,7 @@ LIC_FILES_CHKSUM = "file://licenses/GPL-2;md5=94d55d512a9ba36caa9b7df079bae19f"
 PV = "1.0-git"
 SRCREV = "29839855beb3b9bcf9c15adfca9c2774704f6b2b"
 SRC_URI = "git://github.com/lwfinger/rtl8723du.git;protocol=https \
+            file://licenses/GPL-2 \
             "
 
 S = "${WORKDIR}/git"
