@@ -4,8 +4,6 @@ SRC_URI += "file://brcmfmac43430-sdio.txt \
 	    file://brcmfmac43430-sdio.bin \
 	    "
 
-LICENSE_${PN}-rtl-bt = "Firmware-rtlwifi_firmware"
-
 do_install_append() {
 	install -D -m 0644 ${WORKDIR}/brcmfmac43430-sdio.txt ${D}/lib/firmware/brcm/brcmfmac43430-sdio.txt
 	install -D -m 0644 ${WORKDIR}/brcmfmac43430-sdio.bin ${D}/lib/firmware/brcm/brcmfmac43430-sdio.bin
@@ -14,10 +12,6 @@ do_install_append() {
 FILES_${PN}-bcm43430 += " \
   /lib/firmware/brcm/brcmfmac43430-sdio.txt \
 "
-FILES_${PN}-rtl-bt = " \
-  ${nonarch_base_libdir}/firmware/rtl_bt/rtl*.bin \
+FILES_${PN}-rtl8723 += " \
+  ${nonarch_base_libdir}/firmware/rtl_bt/rtl8723*.bin \
 "
-RDEPENDS_${PN}-rtl_bt += "${PN}-rtl-license"
-
-PACKAGES += "${PN}-rtl-bt\
-			"
