@@ -1,12 +1,11 @@
 SUMMARY = "RTL8723DU kernel driver (wifi + bluetooth)"
 DESCRIPTION = "RTL8723DU kernel driver"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://licenses/GPL-2;md5=94d55d512a9ba36caa9b7df079bae19f"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
 PV = "1.0-git"
 SRCREV = "29839855beb3b9bcf9c15adfca9c2774704f6b2b"
 SRC_URI = "git://github.com/lwfinger/rtl8723du.git;protocol=https \
-            file://licenses/GPL-2 \
             "
 
 S = "${WORKDIR}/git"
