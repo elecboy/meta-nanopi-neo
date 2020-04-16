@@ -1,0 +1,27 @@
+From afe602227962f395c2d4c9ad124b39a587c572a9 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Thu, 16 Apr 2020 16:02:17 +0800
+Subject: [PATCH] force CFLAGS -Wno-date-time
+
+---
+ Makefile | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 9de45ed..27f4ba5 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,10 +1,7 @@
+ EXTRA_CFLAGS += $(USER_EXTRA_CFLAGS)
+ EXTRA_CFLAGS += -O1
+ 
+-GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
+-ifeq ($(GCC_VER_49),1)
+ EXTRA_CFLAGS += -Wno-date-time	# Fix compile error && warning on gcc 4.9 and later
+-endif
+ 
+ EXTRA_CFLAGS += -I$(src)/include
+ 
+-- 
+2.26.1
+
