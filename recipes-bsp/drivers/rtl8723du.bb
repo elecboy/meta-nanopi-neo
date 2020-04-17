@@ -7,6 +7,7 @@ PV = "1.0-git"
 SRCREV = "29839855beb3b9bcf9c15adfca9c2774704f6b2b"
 SRC_URI = "git://github.com/lwfinger/rtl8723du.git;protocol=https \
             file://0001-force-CFLAGS-Wno-date-time.patch \
+            file://8723du.conf \
            "
 
 S = "${WORKDIR}/git"
@@ -30,6 +31,7 @@ do_install () {
 
     install -d ${D}${sysconfdir}/modprobe.d
     echo "blacklist rtl8xxxu" > ${D}${sysconfdir}/modprobe.d/rtl8723du-blacklist.conf
+    install -m 0644 ${WORKDIR}/8723du.conf ${D}${sysconfdir}/modprobe.d/
 }
 
 FILES_${PN} += "${sysconfdir}"
