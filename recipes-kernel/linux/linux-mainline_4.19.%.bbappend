@@ -1,7 +1,6 @@
 FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
 SRC_URI_append_nanopi-neo-core += "\
     file://defconfig \
-    file://Proper-RTS-control-when-buffers-fill.patch \
     file://0001-nanopi-neo-nanopi-neo-core.patch \
     file://0002-enable-mmc2.patch \
     file://0003-enable-usb1-usb2.patch \
