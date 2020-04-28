@@ -6,4 +6,4 @@ After=bluetooth.target
 Type=simple
 # A delay is needed, 1s seems enough
 ExecStartPre=/bin/sleep 1s
-ExecStart=/usr/bin/btattach -B /dev/serial/by-path/%I -S 1000000
+ExecStart=/usr/bin/btattach -B "/dev/serial/by-path/%I" -S 1000000
