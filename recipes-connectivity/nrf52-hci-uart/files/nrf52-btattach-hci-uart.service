@@ -1,11 +1,10 @@
 [Unit]
-Description=Start btattach, needed to enable Bluetooth for nrf52832 zephyr hci uart adapter
+Description=btattach hci_uart, needed to enable Bluetooth for nrf52832 zephyr hci uart adapter
 After=bluetooth.target
 
 [Service]
-Type=forking
-GuessMainPID=false
-ExecStart=/bin/sh -c "exec /usr/bin/btattach -B /dev/ttyHCIUART0  -S 1000000"
+Type=simple
+ExecStart=/usr/bin/btattach -B /dev/ttyHCIUART0  -S 1000000
 
 [Install]
 WantedBy=multi-user.target
