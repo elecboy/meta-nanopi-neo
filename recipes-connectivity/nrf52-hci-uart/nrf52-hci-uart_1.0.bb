@@ -12,13 +12,13 @@ DEPENDS = "bluez5"
 
 SRC_URI = "\
     file://nrf52-btattach-hci-uart.service \
-    file://01-nrf52-hci-uart.rules \
+    file://nrf52-hci-uart.rules \
 "
 
 S = "${WORKDIR}"
 
 do_install() {
-    install -m 0644 -D ${WORKDIR}/01-nrf52-hci-uart.rules ${D}${sysconfdir}/udev/rules.d/01-nrf52-hci-uart.rules
+    install -m 0644 -D ${WORKDIR}/nrf52-hci-uart.rules ${D}${sysconfdir}/udev/rules.d/nrf52-hci-uart.rules
     install -m 0644 -D ${WORKDIR}/nrf52-btattach-hci-uart.service ${D}${systemd_unitdir}/system/nrf52-btattach-hci-uart.service
     mkdir -p ${D}${sysconfdir}/systemd/system/multi-user.target.wants
     ln -sf /lib/systemd/system/nrf52-btattach-hci-uart.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/nrf52-btattach-hci-uart.service
