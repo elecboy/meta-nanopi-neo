@@ -3,13 +3,13 @@ Description=Start btattach, needed to enable Bluetooth for nrf52832 zephyr hci u
 After=bluetooth.target
 
 [Path]
-PathExists=/dev/ttyHCI_UART0
+PathExists=/dev/ttyHCIUART0
 
 [Service]
 Type=simple
 # A delay is needed, 1s seems enough
 ExecStartPre=/bin/sleep 1s
-ExecStart=/usr/bin/btattach -B /dev/ttyHCI_UART0  -S 1000000
+ExecStart=/usr/bin/btattach -B /dev/ttyHCIUART0  -S 1000000
 
 [Install]
 WantedBy=multi-user.target
