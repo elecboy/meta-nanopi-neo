@@ -1,0 +1,4 @@
+[Slice]
+Slice=user.slice
+MemoryHigh=120M
+MemoryMax=140M

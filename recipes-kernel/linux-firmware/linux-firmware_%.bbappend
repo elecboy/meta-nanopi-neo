@@ -12,4 +12,6 @@ do_install_append() {
 FILES_${PN}-bcm43430 += " \
   /lib/firmware/brcm/brcmfmac43430-sdio.txt \
 "
-
+FILES_${PN}-rtl8723 += " \
+  ${nonarch_base_libdir}/firmware/rtl_bt/rtl8723*.bin \
+"
