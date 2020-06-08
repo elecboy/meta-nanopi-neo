@@ -12,7 +12,7 @@ SRC_URI = "git://github.com/brektrou/rtl8821CU.git;protocol=https \
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "virtual/kernel"
+DEPENDS = "virtual/kernel bc-native"
 
 inherit module
 
