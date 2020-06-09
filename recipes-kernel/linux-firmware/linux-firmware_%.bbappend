@@ -15,3 +15,6 @@ FILES_${PN}-bcm43430 += " \
 FILES_${PN}-rtl8723 += " \
   ${nonarch_base_libdir}/firmware/rtl_bt/rtl8723*.bin \
 "
+FILES_${PN}-rtl8821 += " \
+  ${nonarch_base_libdir}/firmware/rtl_bt/rtl8821*.bin \
+"
