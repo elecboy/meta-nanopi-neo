@@ -19,7 +19,7 @@ S = "${WORKDIR}"
 
 do_install() {
     install -m 0644 -D ${WORKDIR}/nrf52-hci-uart.rules ${D}${sysconfdir}/udev/rules.d/nrf52-hci-uart.rules
-    install -m 0644 -D ${WORKDIR}/nrf52-btattach-hci-uart.service ${D}${systemd_unitdir}/system/nrf52-btattach-hci-uart.service
+    # install -m 0644 -D ${WORKDIR}/nrf52-btattach-hci-uart.service ${D}${systemd_unitdir}/system/nrf52-btattach-hci-uart.service
 }
 
 SYSTEMD_SERVICE_${PN} = "nrf52-btattach-hci-uart.service"
