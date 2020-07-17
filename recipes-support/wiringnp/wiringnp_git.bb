@@ -46,4 +46,3 @@ do_install() {
 
 }
 
-inherit qmake5
