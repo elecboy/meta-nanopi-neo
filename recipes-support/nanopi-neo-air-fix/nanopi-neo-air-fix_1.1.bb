@@ -21,7 +21,7 @@ S = "${WORKDIR}"
 SYSTEMD_AUTO_ENABLE_${PN} = "enable"
 
 do_install() {
-    install -m 0644 -D ${WORKDIR}/wifi_power.sh ${D}${libdir}/wifi_manager/wifi_power.sh
+    install -m 0755 -D ${WORKDIR}/wifi_power.sh ${D}${libdir}/wifi_manager/wifi_power.sh
     install -m 0644 -D ${WORKDIR}/nanopi-neo-air-cpufreq.service ${D}${systemd_unitdir}/system/nanopi-neo-air-cpufreq.service
     install -m 0644 ${WORKDIR}/wifi_power_manager.service ${D}${systemd_unitdir}/system
     sed -i -e 's,@SBINDIR@,${sbindir},g' -e 's,@SYSCONFDIR@,${sysconfdir},g' ${D}${systemd_unitdir}/system/nanopi-neo-air-cpufreq.service

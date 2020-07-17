@@ -5,8 +5,8 @@ After=network.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/lib/wifi_manager/wifi_power.sh on
-ExecStop=/usr/lib/wifi_manager/wifi_power.sh off
+ExecStart=/bin/bash -c "/usr/lib/wifi_manager/wifi_power.sh on"
+ExecStop=/bin/bash -c "/usr/lib/wifi_manager/wifi_power.sh off"
 
 Restart=no
 
