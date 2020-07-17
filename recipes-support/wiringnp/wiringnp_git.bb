@@ -13,6 +13,7 @@ SRC_URI = "\
           file://0001-yocto-build.patch \
           file://0002-fix-sys-info.patch \
           file://sys_info \
+          file://sudo_gpio \
 "
 SRCREV = "78f7feeae3989aaae6114ee3f7609c21debcd80f"
 
@@ -43,6 +44,7 @@ do_install() {
      install -m 0755 ${S}/gpio/gpio ${D}${bindir}
      
      install -m 0644 -D ${WORKDIR}/sys_info ${D}${sysconfdir}/sys_info
+     install -m 0600 -D ${WORKDIR}/sudo_gpio ${D}${sysconfdir}/sudoers.d/gpio
 
 }
 
