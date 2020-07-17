@@ -1,25 +1,29 @@
 diff --git a/devLib/Makefile b/devLib/Makefile
-index a3c0d42..bb9a71b 100644
+index a3c0d42..fae4cb5 100644
 --- a/devLib/Makefile
 +++ b/devLib/Makefile
-@@ -33,7 +33,7 @@ DYNAMIC=libwiringPiDev.so.$(VERSION)
+@@ -32,8 +32,8 @@ DYNAMIC=libwiringPiDev.so.$(VERSION)
+ 
  #DEBUG	= -g -O0
  DEBUG	= -O2
- CC	= gcc
+-CC	= gcc
 -INCLUDE	= -I.
++#CC	= gcc
 +INCLUDE	= -I. -I../wiringPi
  CFLAGS	= $(DEBUG) -Wformat=2 -Wall $(INCLUDE) -Winline -pipe -fPIC
  
  LIBS    =
 diff --git a/gpio/Makefile b/gpio/Makefile
-index 37b4887..d51c73c 100644
+index 37b4887..04ed89a 100644
 --- a/gpio/Makefile
 +++ b/gpio/Makefile
-@@ -29,10 +29,10 @@ PREFIX=/local
+@@ -28,11 +28,11 @@ PREFIX=/local
+ 
  #DEBUG	= -g -O0
  DEBUG	= -O2
- CC	= gcc
+-CC	= gcc
 -INCLUDE	= -I$(DESTDIR)$(PREFIX)/include
++#CC	= gcc
 +INCLUDE	= -I../devLib -I../wiringPi
  CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
  
@@ -28,3 +32,16 @@ index 37b4887..d51c73c 100644
  LIBS    = -lwiringPi -lwiringPiDev -lpthread -lm
  
  # May not need to  alter anything below this line
+diff --git a/wiringPi/Makefile b/wiringPi/Makefile
+index 808d385..bbfb775 100644
+--- a/wiringPi/Makefile
++++ b/wiringPi/Makefile
+@@ -33,7 +33,7 @@ DYNAMIC=libwiringPi.so.$(VERSION)
+ 
+ #DEBUG	= -g -O0
+ DEBUG	= -O2
+-CC	= gcc
++#CC	= gcc
+ INCLUDE	= -I.
+ DEFS	= -D_GNU_SOURCE
+ CFLAGS	= $(DEBUG) $(DEFS) -Wformat=2 -Wall -Winline $(INCLUDE) -pipe -fPIC -Wpointer-to-int-cast
