@@ -48,5 +48,6 @@ do_install() {
 
 }
 
-PACKAGES = "${PN}"
-FILES_${PN} = "/"
+#PACKAGES = "${PN}"
+#FILES_${PN} = "/"
+FILES_${PN}-dbg = "${bindir}/.debug ${libdir}/.debug ${libdir}/*.so"
