@@ -1,0 +1,17 @@
+diff --git a/gpio/Makefile b/gpio/Makefile
+index 37b4887..d51c73c 100644
+--- a/gpio/Makefile
++++ b/gpio/Makefile
+@@ -29,10 +29,10 @@ PREFIX=/local
+ #DEBUG	= -g -O0
+ DEBUG	= -O2
+ CC	= gcc
+-INCLUDE	= -I$(DESTDIR)$(PREFIX)/include
++INCLUDE	= -I../devLib -I../wiringPi
+ CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
+ 
+-LDFLAGS	= -L$(DESTDIR)$(PREFIX)/lib
++LDFLAGS	= -L../devLib -L../wiringPi
+ LIBS    = -lwiringPi -lwiringPiDev -lpthread -lm
+ 
+ # May not need to  alter anything below this line
