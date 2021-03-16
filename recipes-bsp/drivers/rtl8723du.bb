@@ -4,7 +4,7 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
 PV = "1.0-git"
-SRCREV = "29839855beb3b9bcf9c15adfca9c2774704f6b2b"
+SRCREV = "9690f34fc2603d04b53432df4e3d6c282f3d1ca6"
 SRC_URI = "git://github.com/lwfinger/rtl8723du.git;protocol=https \
             file://0001-force-CFLAGS-Wno-date-time.patch \
             file://8723du.conf \
